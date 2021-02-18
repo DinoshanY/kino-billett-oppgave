@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+      <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="mainDiv">
+    <form onsubmit="dataColl(); return false" required="">
+      <select name="film" id="filmer" required="">
+        <option name="" id="">Velg en film</option>
+        <option value="lego">Lego StarWars</option>
+        <option value="kimi">Kimi No Na Wa</option>
+        <option value="water">Weathering with you</option>
+        <option value="konosuba">Konosuba</option>
+      </select>
+      <p id="selectErr"></p>
+      <p id="Antall"></p>
+      <label>Antall biletter</label><br >
+      <input name="tickets" required="" placeholder="1-10" />
+      <p id="Navn"></p>
+      <label>Angi Navn</label><br >
+      <input name="navn" required="" placeholder="Johan Sebastian">
+      <p id="Etternavn"></p>
+      <label>Angi Etternavn</label><br >
+      <input name="etternavn" required="" placeholder="Saire Borgersen">
+      <p id="Nummer"></p>
+      <label>Angi tlf nummer</label><br >
+      <input name="phonenumber" required="" placeholder="+47 xxxxxxxx">
+      <p id="Email"></p>
+      <label>Angi Email</label><br >
+      <input name="email" required="" placeholder="example@gmail.com    "> 
+      <br >
+
+      <button>Kjøp</button>
+      <button onclick="">Angre Kjøp</button>
+    </form>
+</div>
+
+<pre><code id="enDiv"></code></pre>
+ 
+
+    <script src="code.js"></script>
+  </body>
+</html>
