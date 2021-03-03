@@ -8,38 +8,39 @@
   </head>
   <body>
     <div class="mainDiv">
-    <form onsubmit="dataColl(); return false" required="">
+    <form id="form" onsubmit="dataColl(); return false" required="">
       <select name="film" id="filmer" required="">
-        <option name="" id="">Velg en film</option>
-        <option value="lego">Lego StarWars</option>
-        <option value="kimi">Kimi No Na Wa</option>
-        <option value="water">Weathering with you</option>
-        <option value="konosuba">Konosuba</option>
+        <option value="" disabled>Velg en film</option>
+        <option value="Lego Starwars">Lego StarWars</option>
+        <option value="Kimi no Na Wa">Kimi No Na Wa</option>
+        <option value="Weathering with you">Weathering with you</option>
+        <option value="The Dictator">The Dictator</option>
+        <option value="Geir The Documentary">Geir The Documentary</option>
       </select>
       <p id="selectErr"></p>
       <p id="Antall"></p>
       <label>Antall biletter</label><br >
-      <input name="tickets" required="" placeholder="1-10" />
+      <input type="number" name="tickets" required="" placeholder="1-10" />
       <p id="Navn"></p>
       <label>Angi Navn</label><br >
-      <input name="navn" required="" placeholder="Johan Sebastian">
+      <input  name="navn" required="" placeholder="Johan Sebastian">
       <p id="Etternavn"></p>
       <label>Angi Etternavn</label><br >
       <input name="etternavn" required="" placeholder="Saire Borgersen">
       <p id="Nummer"></p>
       <label>Angi tlf nummer</label><br >
-      <input name="phonenumber" required="" placeholder="+47 xxxxxxxx">
+      <input type="number" name="phonenumber" required="" placeholder="+47 xxxxxxxx">
       <p id="Email"></p>
       <label>Angi Email</label><br >
-      <input name="email" required="" placeholder="example@gmail.com    "> 
+      <input type="email" name="email" required="" placeholder="example@gmail.com    "> 
       <br >
 
       <button>Kjøp</button>
-      <button onclick="">Angre Kjøp</button>
+      <button onclick="deleteTicket()">Angre Kjøp</button>
     </form>
 </div>
 
-<pre><code id="enDiv"></code></pre>
+<pre><code id="enDiv"><p> Du har ingen Biletter </p></code></pre>
  
 
     <script src="code.js"></script>
