@@ -1,35 +1,48 @@
 //This functions stores the values of the inputs and then displays them as a JSON string :)
 let select = document.querySelectorAll("option");
-let storage = [];
+let storage = JSON.parse(localStorage.storage || null) || [];
 const inputs = document.querySelectorAll("input");
-const filmvalg = document.querySelectorAll("select");
+const filmChoice = document.querySelectorAll("select");
+
 function dataColl() {
   let obj = {};
-  filmvalg.forEach((input) => {
+  filmChoice.forEach((input) => {
     obj[input.name] = input.value;
     input.value = "";
   });
-  storage.push(obj);
   inputs.forEach((input) => {
     obj[input.name] = input.value;
     input.value = "";
   });
+  storage.push(obj);
 
-  document.getElementById("enDiv").innerHTML = JSON.stringify(storage, null, 4);
-  localStorage.tickets = JSON.stringify(storage)
+  document.getElementById("enDiv").innerHTML = JSON.stringify(storage, null, 2);
+  populateList();
 }
 
-//function that just deletes the tickets. 
 function deleteTicket() {
-  document.getElementById("enDiv").innerHTML = "Biletten har blit slettet";
-  storage.pop()
+  storage.pop();
+  document.getElementById("enDiv").innerHTML = JSON.stringify(storage);
 }
 
-//This function will show the tickets that are stored in the local browser
+const STORAGEKEY = "Tickets";
 
-//function showPreviousTicket(){
-  //document.getElementById("toDiv").innerHtml = JSON.stringify(localStorage.tickets, null, 2)
-//}
+let moviesJSON = JSON.stringify(storage);
 
+localStorage.setItem(STORAGEKEY, moviesJSON);
 
-console.log(localStorage)
+moviesJSON = localStorage.getItem(STORAGEKEY);
+if (moviesJSON !== null) {
+  storage = JSON.parse(moviesJSON);
+} else {
+  storage = [];
+}
+
+function populateList() {
+  const ul = document.getElementById("liste");
+
+  ul.innerHTML = "";
+  storage.forEach((element) => {
+    ul.innerHTML += `<li> Kjøpte ${element.tickets} billeter for ${element.film} </li>`;
+  });
+}

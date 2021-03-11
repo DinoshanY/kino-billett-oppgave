@@ -14,3 +14,7 @@ input{
 .toDiv{
     margin-left: 80%;
 }
+
+ul{
+    list-style-type: circle;
+}

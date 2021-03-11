@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="mainDiv">
-    <form id="form" onsubmit="dataColl(); return false" required="">
+    <form id="form" onsubmit="dataColl(); return false" required="" autocomplete="off">
       <select name="film" id="filmer" required="">
         <option value="" disabled>Velg en film</option>
         <option value="Lego Starwars">Lego StarWars</option>
@@ -20,7 +20,7 @@
       <p id="selectErr"></p>
       <p id="Antall"></p>
       <label>Antall biletter</label><br >
-      <input type="number" name="tickets" required="" placeholder="1-10" />
+      <input id="iptNum" type="number" name="tickets" required="" placeholder="1-10" onkeydown="javascript: return event.keyCode == 69 ? false : true" maxlength="10" >
       <p id="Navn"></p>
       <label>Angi Navn</label><br >
       <input  name="navn" required="" placeholder="Johan Sebastian">
@@ -29,20 +29,21 @@
       <input name="etternavn" required="" placeholder="Saire Borgersen">
       <p id="Nummer"></p>
       <label>Angi tlf nummer</label><br >
-      <input type="number" name="phonenumber" required="" placeholder="+47 xxxxxxxx">
+      <input type="number" name="phonenumber" required="" placeholder="xxxxxxxx" onkeydown="javascript: return event.keyCode == 69 ? false : true" >
       <p id="Email"></p>
       <label>Angi Email</label><br >
-      <input type="email" name="email" required="" placeholder="example@gmail.com    "> 
+      <input type="email" name="email" required="" placeholder="example@gmail.com"> 
       <br >
 
       <button>Kjøp</button>
-      <button onclick="deleteTicket()">Angre Kjøp</button>
-      </form>
-      <button onclick="showPreviousTicket()">Vis forrige billett</button>
+    </form>
+    <button onclick="deleteTicket()">Angre Kjøp</button>
 </div>
 
-<pre><code id="enDiv"><p> Du har ingen Biletter </p></code></pre>
-<pre><code id="toDiv"><p> Vis sletett Billet </p></code></pre>
+<pre><code id="enDiv"></code></pre>
+  
+<ul id="liste"></ul>
+
 
     <script src="code.js"></script>
   </body>
