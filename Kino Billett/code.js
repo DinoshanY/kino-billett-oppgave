@@ -13,22 +13,23 @@ function dataColl() {
   inputs.forEach((input) => {
     obj[input.name] = input.value;
     input.value = "";
-    console.log(storage);
   });
 
   document.getElementById("enDiv").innerHTML = JSON.stringify(storage, null, 4);
   localStorage.tickets = JSON.stringify(storage)
 }
 
+//function that just deletes the tickets. 
 function deleteTicket() {
-  //inputs.length= 0
   document.getElementById("enDiv").innerHTML = "Biletten har blit slettet";
-  storage = [];
+  storage.pop()
 }
 
+//This function will show the tickets that are stored in the local browser
+
+//function showPreviousTicket(){
+  //document.getElementById("toDiv").innerHtml = JSON.stringify(localStorage.tickets, null, 2)
+//}
+
+
 console.log(localStorage)
-
-
-
-
-
