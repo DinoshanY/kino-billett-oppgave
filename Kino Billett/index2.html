@@ -1,6 +1,6 @@
 <html lang="en">
   <head>
-      <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,42 +8,65 @@
   </head>
   <body>
     <div class="mainDiv">
-    <form id="form" onsubmit="dataColl(); return false" required="" autocomplete="off">
-      <select name="film" id="filmer" required="">
-        <option value="" disabled>Velg en film</option>
-        <option value="Lego Starwars">Lego StarWars</option>
-        <option value="Kimi no Na Wa">Kimi No Na Wa</option>
-        <option value="Weathering with you">Weathering with you</option>
-        <option value="The Dictator">The Dictator</option>
-        <option value="Geir The Documentary">Geir The Documentary</option>
-      </select>
-      <p id="selectErr"></p>
-      <p id="Antall"></p>
-      <label>Antall biletter</label><br >
-      <input id="iptNum" type="number" name="tickets" required="" placeholder="1-10" onkeydown="javascript: return event.keyCode == 69 ? false : true" maxlength="10" >
-      <p id="Navn"></p>
-      <label>Angi Navn</label><br >
-      <input  name="navn" required="" placeholder="Johan Sebastian">
-      <p id="Etternavn"></p>
-      <label>Angi Etternavn</label><br >
-      <input name="etternavn" required="" placeholder="Saire Borgersen">
-      <p id="Nummer"></p>
-      <label>Angi tlf nummer</label><br >
-      <input type="number" name="phonenumber" required="" placeholder="xxxxxxxx" onkeydown="javascript: return event.keyCode == 69 ? false : true" >
-      <p id="Email"></p>
-      <label>Angi Email</label><br >
-      <input type="email" name="email" required="" placeholder="example@gmail.com"> 
-      <br >
+      <form
+        id="form"
+        onsubmit="dataColl(); return false"
+        required=""
+        autocomplete="off"
+      >
+        <select name="film" id="filmer" required="">
+          <option value="" disabled>Velg en film</option>
+          <option value="Lego Starwars">Lego StarWars</option>
+          <option value="Kimi no Na Wa">Kimi No Na Wa</option>
+          <option value="Weathering with you">Weathering with you</option>
+          <option value="The Dictator">The Dictator</option>
+          <option value="Geir The Documentary">Geir The Documentary</option>
+        </select>
+        <p id="selectErr"></p>
+        <p id="Antall"></p>
+        <label>Antall biletter</label><br />
+        <input
+          id="iptNum"
+          type="number"
+          name="tickets"
+          required=""
+          placeholder="1-10"
+          onkeydown="javascript: return event.keyCode == 69 ? false : true"
+          max="10"
+        />
+        <p id="Navn"></p>
+        <label>Angi Navn</label><br />
+        <input name="navn" required="" placeholder="Johan Sebastian" />
+        <p id="Etternavn"></p>
+        <label>Angi Etternavn</label><br />
+        <input name="etternavn" required="" placeholder="Saire Borgersen" />
+        <p id="Nummer"></p>
+        <label>Angi tlf nummer</label><br />
+        <input
+          type="number"
+          name="phonenumber"
+          required=""
+          placeholder="xxxxxxxx"
+          onkeydown="javascript: return event.keyCode == 69 ? false : true"
+        />
+        <p id="Email"></p>
+        <label>Angi Email</label><br />
+        <input
+          type="email"
+          name="email"
+          required=""
+          placeholder="example@gmail.com"
+        />
+        <br />
 
-      <button>Kjøp</button>
-    </form>
-    <button onclick="deleteTicket()">Angre Kjøp</button>
-</div>
+        <button>Kjøp</button>
+      </form>
+      <button onclick="deleteTicket()">Angre Kjøp</button>
+    </div>
 
-<pre><code id="enDiv"></code></pre>
-  
-<ul id="liste"></ul>
+    <pre><code id="enDiv"></code></pre>
 
+    <ul id="liste"></ul>
 
     <script src="code.js"></script>
   </body>
